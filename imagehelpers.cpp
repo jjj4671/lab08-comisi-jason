@@ -164,18 +164,25 @@ void scale(int image[MAX_H][MAX_W], int &h, int &w){
 	}
 	writeImage(MaximumD, h*2, w*2, "TASKE.pgm");
 }
-
+//-------------Enhancement----------------------------//
+// I created a framed white canvas. A drawing or picture canvas
+// be inserted to drawn in it.
 void box(int image[MAX_H][MAX_W], int &h, int &w){
 	int MaximumD[MAX_H][MAX_W];
-	for(int row = 0; row < h; row++) {
-		for(int col = 0; col < w; col++) {
-			if(col > w/4 && col < w - w/4  && row > h/4 && row < h - h/4){
+	for(int row = 0; row < h; row++)
+  {
+		for(int col = 0; col < w; col++)
+    {
+			if(col > w/22 && col < w - w/22  && row > h/22 && row < h - h/22)
+      {
 				MaximumD[row][col] = 255;
 			}
-			else{
+			else
+      {
 				MaximumD[row][col] = image[row][col];
 			}
 		}
 	}
 	writeImage(MaximumD, h, w, "TASKC.pgm");
 }
+//----------------------------------------------------//
